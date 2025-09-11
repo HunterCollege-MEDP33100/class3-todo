@@ -1,7 +1,7 @@
 // ADD YOUR CODE BELOW 
 
 // 1. Start with an array of strings (ex: "grapes", "bread", "tea")
-let todoItems = [
+let todoItems = ["bananas", "rice","bread"
     // add more items here
 ];
 
