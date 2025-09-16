@@ -26,6 +26,13 @@ function updateList() {
     for (let i = 0; i < todoItems.length; i++) {
         let li = document.createElement("li");
         li.textContent = todoItems[i];
+
+        // allow removing items by clicking on them
+        li.addEventListener("click", function () {
+            todoItems.splice(i, 1); // remove the clicked item from the array
+            updateList(); // refresh the list
+        });
+
         list.appendChild(li);
     }
 }
@@ -35,17 +42,24 @@ updateList();
 
 // 4. Handle adding a new item when the form is submitted
 addItemButton.addEventListener('click', function () {
-    // add your code here
+    let newItem = input.value.trim();
+    if (newItem !== "") {
+        todoItems.push(newItem); // add to array
+        input.value = ""; // clear input
+        updateList(); // refresh list
+    }
 });
 
 
 // 5. Sort items alphabetically when sortBtn is clicked
 sortBtn.addEventListener("click", () => {
-    // add your code here
+    todoItems.sort();
+    updateList();
 });
 
 
 // 6. Clear all items when clearBtn is clicked
 clearBtn.addEventListener("click", () => {
-    // add your code here
+    todoItems = []; // empty the array
+    updateList();
 });
