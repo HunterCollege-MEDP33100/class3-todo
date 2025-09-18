@@ -11,7 +11,8 @@ let todoItems = [
     "tacos",
     "rice",
     "soup",
-    "steak"
+    "apple",
+    "steak" 
 ];
 
 // 2. Create variables for each interactive DOM element
