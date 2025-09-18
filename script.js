@@ -10,6 +10,9 @@ let todoItems = ["grapes", "bread", "tea"
 // 2. Create variables for each interactive DOM element
 const addItemButton = document.getElementById('add-item-button');
 // add more variables below
+const inputEl = document.getElementById('text');
+const sortBtn = document.getElementById('sort');
+const clearBtn = document.getElementById('clear');
 const list = document.getElementById('list');
 
 
