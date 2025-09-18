@@ -64,3 +64,13 @@ clearBtn.addEventListener("click", () => {
 	todoItems = [];
 	updateList();
 });
+// remove on click?
+list.addEventListener("click", (e) => {
+    const li = e.target.closest("li");
+    if (!li) return;
+    const idx = Number(li.dataset.index);
+    if (!Number.isNaN(idx)) {
+        todoItems.splice(idx, 1);
+        updateList();
+    }
+});
