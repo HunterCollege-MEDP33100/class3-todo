@@ -20,6 +20,14 @@ const list = document.getElementById('list');
 // 3. Write a function to display all items in the #list element
 function updateList() {
     // add your code here
+	list.innerHTML = "";
+	todoItems.forEach((text, i) => {
+		const li = document.createElement("li");
+		li.textContent = text;
+		li.dataset.index = String(i);
+		list.appendChild(li);
+});
+
 }
 
 updateList();
