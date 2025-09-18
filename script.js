@@ -9,9 +9,9 @@ let todoItems = ["grapes", "bread", "tea", "eggs", "milk", "cereal"];
 // 2. Create variables for each interactive DOM element
 const addItemButton = document.getElementById('add-item-button');
 const list = document.getElementById('list');
-const sortBtn = document.getElementById('sortBtn');
-const clearBtn = document.getElementById('clearBtn');
-const input = document.getElementById('')
+const sortBtn = document.getElementById('sort');
+const clearBtn = document.getElementById('clear');
+const input = document.getElementById('text')
 
 // add more variables below
 todoItems.push("Apple");// Pushes Apple into the list "todoItems"
@@ -23,8 +23,10 @@ todoItems.push("Lemon");// Pushes Lemon into the list "todoItems"
 // 3. Write a function to display all items in the #list element
 function updateList() {
     // add your code here
-    for(let i = 0; i < todoItems.length; i++){
-        console.log(todoItems[i]);
+    for (let i = 0; i < items.length; i++) {
+      const x = document.createElement("x"); // Create list item
+      x.textContent = items[i]; // Set its text
+      list.appendChild(x); // Add it to the UL
     }
 }
 
