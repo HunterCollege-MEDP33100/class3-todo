@@ -69,7 +69,6 @@ upperBtn.addEventListener("click", () => {
 
 // 7. Clear all items when clearBtn is clicked
 clearBtn.addEventListener("click", () => {
-    console.log('clicked')
     // add your code here
     todoItems.length = 0;
     updateList();
