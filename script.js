@@ -11,6 +11,7 @@ const addItemButton = document.getElementById('add-item-button');
 const list = document.getElementById('list');
 const sortBtn = document.getElementById('sortBtn');
 const clearBtn = document.getElementById('clearBtn');
+const input = document.getElementById('')
 
 // add more variables below
 todoItems.push("Apple");// Pushes Apple into the list "todoItems"
