@@ -61,4 +61,6 @@ sortBtn.addEventListener("click", () => {
 // 6. Clear all items when clearBtn is clicked
 clearBtn.addEventListener("click", () => {
     // add your code here
+	todoItems = [];
+	updateList();
 });
