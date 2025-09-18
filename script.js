@@ -51,6 +51,8 @@ addItemButton.addEventListener('click', function () {
 // 5. Sort items alphabetically when sortBtn is clicked
 sortBtn.addEventListener("click", () => {
     // add your code here
+	todoItems.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+	updateList();
 });
 
 
