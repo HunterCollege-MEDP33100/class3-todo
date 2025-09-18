@@ -37,6 +37,12 @@ updateList();
 // 4. Handle adding a new item when the form is submitted
 addItemButton.addEventListener('click', function () {
     // add your code here
+	const value = (inputEl.value || "").trim();
+	if (!value) return;
+	todoItems.push(value);
+	inputEl.value = "";
+	updateList();
+	inputEl.focus();
 });
 
 
