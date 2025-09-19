@@ -2,44 +2,64 @@
 
 // 1. Start with an array of strings (ex: "grapes", "bread", "tea")
 let todoItems = [
-    // add more items here
+    "Apple", "Banana", "Orange", "Strawberry", "Pineapple",
+    "Grape", "Watermelon", "Peach", "Pear", "Cherry",
+    "Lemon", "Lime", "Mango", "Coconut", "Kiwi",
+    "Plum", "Avocado"
 ];
-
 
 
 // 2. Create variables for each interactive DOM element
 const addItemButton = document.getElementById('add-item-button');
-// add more variables below
 const list = document.getElementById('list');
-
+const sortBtn = document.getElementById('sort');
+const clearBtn = document.getElementById('clear');
+const input = document.getElementById('text');
 
 
 // 3. Write a function to display all items in the #list element
 function updateList() {
-    // add your code here
+    // clear the list before adding items
+    list.innerHTML = "";
+
+    // loop through the array and add each item
+    for (let i = 0; i < todoItems.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = todoItems[i];
+
+        // allow removing items by clicking on them
+        li.addEventListener("click", function () {
+            todoItems.splice(i, 1); // remove the clicked item from the array
+            updateList(); // refresh the list
+        });
+
+        list.appendChild(li);
+    }
 }
 
 updateList();
 
 
-
 // 4. Handle adding a new item when the form is submitted
 addItemButton.addEventListener('click', function () {
-    // add your code here
+    let newItem = input.value.trim();
+    if (newItem !== "") {
+        todoItems.push(newItem); // add to array
+        input.value = ""; // clear input
+        updateList(); // refresh list
+    }
 });
-
-
 
 
 // 5. Sort items alphabetically when sortBtn is clicked
 sortBtn.addEventListener("click", () => {
-    // add your code here
+    todoItems.sort();
+    updateList();
 });
-
-
 
 
 // 6. Clear all items when clearBtn is clicked
 clearBtn.addEventListener("click", () => {
-    // add your code here
+    todoItems = []; // empty the array
+    updateList();
 });
